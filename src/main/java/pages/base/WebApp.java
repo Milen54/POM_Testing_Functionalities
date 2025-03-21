@@ -16,6 +16,9 @@ public class WebApp {
     private CheckoutPage checkoutPage;
     private ShoppingCartPage shoppingCartPage;
     private OrderConfirmationPage orderConfirmationPage;
+    private HomePage homePage;
+    private RegisterPage registerPage;
+    private SuccessPage successPage;
 
     public WebApp(WebDriver driver) {
         this.driver = driver;
@@ -75,6 +78,27 @@ public class WebApp {
             orderConfirmationPage = new OrderConfirmationPage(driver);
         }
         return orderConfirmationPage;
+    }
+
+    public HomePage homePage() {
+        if (homePage == null) {
+            homePage = new HomePage(driver);
+        }
+        return homePage;
+    }
+
+    public RegisterPage registerPage() {
+        if (registerPage == null) {
+            registerPage = new RegisterPage(driver);
+        }
+        return registerPage;
+    }
+
+    public SuccessPage successPage() {
+        if (successPage   == null) {
+            successPage = new SuccessPage(driver);
+        }
+        return successPage;
     }
 
     public void quit() {

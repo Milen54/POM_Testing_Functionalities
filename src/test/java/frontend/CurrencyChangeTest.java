@@ -13,8 +13,6 @@ public class CurrencyChangeTest extends BaseTest {
         webApp.headerPage().goToSearchPage();
         webApp.headerPage().changeCurrencyToEuro();
 
-        // TODO : create assertion for the currency
-
         WebElement productPrice = driver.findElement(By.xpath("//span[contains(text(), '€')]"));
         webApp.headerPage().jsScroll(productPrice);
 
